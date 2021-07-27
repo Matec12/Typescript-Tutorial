@@ -1,38 +1,67 @@
-// const person: {
-//   name: string;
-//   age: number;
-// } = {
+//function void
 
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string]
-// } ={
-//   name: "Alayo Ibrahim",
-//   age: 30,
-//   hobbies: ['Sports', 'Cooking'],
-//   role: [2, 'author']
-// };
+// function add(n1: number, n2: number) {
+//   return n1 + n2;
+// }
 
-const person = {
-  name: "Alayo Ibrahim",
-  age: 30,
-  hobbies: ['Sports', 'Cooking'],
-  role: [2, 'author']
-};
+// function printResult(num: number): void {
+//   console.log('Result: ' + num);
+// }
 
-// person.role.push('admin');  //exception tuple
+// printResult(add(5, 12));
 
-// person.role[1] = 10;
-// person.role = [1, 'admin', 'user']
+//function as types
 
-let favoriteActivities: string[];
-favoriteActivities = ['Sports'];
+// function add(n1: number, n2: number) {
+//   return n1 + n2;
+// }
 
-console.log(person);  
+// function printResult(num: number): void {
+//   console.log('Result: ' + num);
+// }
 
-for (const hobby of person.hobbies){
-  console.log(hobby.toUpperCase());
-  // console.log(hobby.map());//ERROR!!!
+
+
+// printResult(add(5, 12));
+
+// let combineValues: (a: number, b: number) => number;
+
+// combineValues = add;
+// // combineValues = printResult;
+// // combineValues = 5;
+
+// console.log(combineValues(8, 8));
+
+// let someValue: undefined;
+
+
+//
+
+function add(n1: number, n2: number) {
+  return n1 + n2;
 }
+
+function printResult(num: number): void {
+  console.log('Result: ' + num);
+}
+
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+  const result = n1 + n2;
+  cb(result);
+}
+
+printResult(add(5, 12));
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult;
+// combineValues = 5;
+
+console.log(combineValues(8, 8));
+
+// let someValue: undefined;
+
+addAndHandle(10, 20, (result) => {
+  console.log(result);
+});
